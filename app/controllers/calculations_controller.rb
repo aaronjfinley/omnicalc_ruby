@@ -15,7 +15,7 @@ class CalculationsController < ApplicationController
 
     @character_count_without_spaces = @text.length - (@text.count " ")
 
-    @word_count = (@text.count " ") + 1
+    @word_count = @text.split.size
 
     @occurrences = @text.downcase.scan(@special_word).length
   end
